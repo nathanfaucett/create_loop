@@ -32,6 +32,9 @@ module.exports = function createLoop(callback, element) {
                 requestAnimationFrame.cancel(id);
             }
         },
+        setCallback: function(value) {
+            callback = value;
+        },
         setElement: function(value) {
             element = value;
         },

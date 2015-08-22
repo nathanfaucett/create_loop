@@ -1,4 +1,5 @@
-var requestAnimationFrame = require("request_animation_frame");
+var isNull = require("is_null"),
+    requestAnimationFrame = require("request_animation_frame");
 
 
 module.exports = function createLoop(callback, element) {
@@ -28,8 +29,9 @@ module.exports = function createLoop(callback, element) {
         pause: function() {
             running = false;
 
-            if (id) {
+            if (!isNull(id)) {
                 requestAnimationFrame.cancel(id);
+                id = null;
             }
         },
         setCallback: function(value) {

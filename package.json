@@ -7,6 +7,12 @@
     "url": "https://github.com/nathanfaucett/create_loop.git"
   },
   "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test-node",
+    "test-node": "node ./test | ./node_modules/.bin/tap-spec",
+    "test-node-raw": "node ./test",
+    "test-browser-local": "zuul --local 8080 --ui tape -- ./test"
+  },
   "keywords": [
     "create_loop",
     "create_loop.js"
@@ -18,9 +24,12 @@
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-jsbeautifier": "^0.2.7",
-    "mocha": "^2.1.0"
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0",
+    "zuul": "^3.3.0"
   },
   "dependencies": {
-    "request_animation_frame": "nathanfaucett/request_animation_frame"
+    "is_null": "git://github.com/nathanfaucett/is_null.git",
+    "request_animation_frame": "git://github.com/nathanfaucett/request_animation_frame.git"
   }
 }

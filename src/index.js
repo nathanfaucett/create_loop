@@ -1,5 +1,5 @@
-var isNull = require("is_null"),
-    requestAnimationFrame = require("request_animation_frame");
+var isNull = require("@nathanfaucett/is_null"),
+    requestAnimationFrame = require("@nathanfaucett/request_animation_frame");
 
 
 module.exports = function createLoop(callback, element) {
